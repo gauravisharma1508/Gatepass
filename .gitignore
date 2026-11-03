@@ -1,0 +1,10 @@
+.env
+bin/
+coverage.out
+coverage.html
+backend/data/
+backend/webui/dist/*
+!backend/webui/dist/.gitkeep
+frontend/node_modules/
+frontend/dist/
+node_modules/

@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Gatepass",
+    "slug": "gatepass-mobile",
+    "version": "1.0.0",
+    "scheme": "gatepass",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-status-bar",
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}

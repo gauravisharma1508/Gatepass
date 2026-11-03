@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres        # local development only
+    ports: ["${GATEPASS_DB_PORT:-5433}:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      retries: 10
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    ports: ["1025:1025", "8025:8025"]
+volumes:
+  pgdata:
